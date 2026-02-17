@@ -1,0 +1,22 @@
+
+## 1. Create and activate virtual environment
+python -m venv venv
+venv\Scripts\activate
+
+## 2. Install requirements
+pip install -r requirements.txt
+
+## 3. Export YOLO model to NCNN format
+python -c "from ultralytics import YOLO; model = YOLO('yolov8n.pt'); model.export(format='ncnn')"
+
+## 4. Run detection script
+python detect_live.py
+
+## 5. Run tracking script
+python track_live.py
+
+## 6. Run model test
+python Model_Test.py
+
+## 7. Run phase 1-2 human detection
+python phase1_2_human_detection.py
